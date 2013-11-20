@@ -1,9 +1,0 @@
-{
-    "description": "Simple Promises",
-    "directories": {
-        "lib": "."
-    },
-    "main": "org.favo.promise",
-    "name": "org.favo.promise",
-    "version": "1.0.0"
-}
