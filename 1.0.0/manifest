@@ -10,8 +10,8 @@ copyright: https://raw.github.com/iskugor/js-promise-simple/
 
 
 # these should not be edited
-name: org.favo.promises
-moduleid: org.favo.promises
+name: org.favo.promise
+moduleid: org.favo.promise
 guid: 02b00e93-43a2-4422-9c70-e0db7c1185d0
 platform: commonjs
 minsdk: 3.0.0
