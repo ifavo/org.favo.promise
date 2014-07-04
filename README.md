@@ -46,10 +46,50 @@ CommonJS Promise Module for Titanium
     });
 
 
-	Promise.defer()
+	testSuccess().then(function () {
+		console.log("success");
+	})
 	.next(function() {
-	    return "ok"; // call after 1000ms.
-	}, 2000);
+		console.log("first success"); // called after 2000ms.
+		return "ok";
+	}, 2000)
 	.next(function(res) {
 	    console.log(res); // call after more 2000ms, and res is "ok"
 	}, 2000);
+	
+	
+	
+	var param = "world";
+
+	Promise.when(testSuccess(), testError(), param)
+	.then(function (res) {
+		console.log("result", res);
+	});
+	
+	Promise.when(testSuccess(), testError(), param)
+	.next(function (data) {
+		return "aloha " + data;
+	})
+	.then(function (res) {
+		console.log("result", res);
+	});
+
+	Promise.when(testSuccess(), param)
+	.next(function (data) {
+		return "hi " + data;
+	})
+	.then(function (res) {
+		console.log("success", res);
+	}, function (res) {
+		console.log("error", res);
+	});
+
+	Promise.when(testError(), param)
+	.next(function (data) {
+		return "hello " + data;
+	})
+	.then(function (res) {
+		console.log("success", res);
+	}, function (res) {
+		console.log("error", res);
+	});
